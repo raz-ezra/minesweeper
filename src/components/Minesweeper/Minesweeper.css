@@ -1,0 +1,45 @@
+.Minesweeper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    user-select: none;
+    height: 100%;
+}
+
+.proud {
+    background-color: #c9c8c8;
+    border: 3px;
+    border-style: solid;
+    border-top-color: #e5e4e4;
+    border-left-color: #e5e4e4;
+    border-bottom-color: #696868;
+    border-right-color: #696868;
+}
+
+.sunk {
+    background-color: #c9c8c8;
+    border: 3px;
+    border-style: solid;
+    border-top-color: #696868;
+    border-left-color: #696868;
+    border-bottom-color: #e5e4e4;
+    border-right-color: #e5e4e4;
+}
+
+.header {
+    padding: 10px;
+    width: 100%;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    max-height: 100%;
+}
+
+.row {
+    display: flex;
+}

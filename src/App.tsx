@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Minesweeper from "./components/Minesweeper/Minesweeper";
+import Controls from "./components/Controls/Controls";
+import {BoardSettings} from "./types/types";
 
 function App() {
+  const [boardSettings, setBoardSettings] = useState<BoardSettings>({rows: 10, cols: 10, mines: 10});
+  const [superman, setSuperman] = useState<boolean>(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="instructions">
+            <h1>Minesweeper</h1>
+            <p><i>
+                The full board might not fit the screen, scroll within the play area to access the full board
+            </i></p>
+        </div>
+        <Controls boardSettings={boardSettings} setBoardSettings={setBoardSettings} superman={superman} setSuperman={setSuperman} />
+        <div className="game">
+            <Minesweeper boardSettings={boardSettings} superman={superman} />
+        </div>
     </div>
   );
 }

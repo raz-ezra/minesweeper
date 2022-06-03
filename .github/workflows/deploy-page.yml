@@ -1,0 +1,21 @@
+name: Deploy Page
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@main
+        with:
+          node-version: 14
+      - name: install dependencies
+        run: npm install
+      - name: deploy
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

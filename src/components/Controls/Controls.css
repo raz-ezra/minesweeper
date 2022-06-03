@@ -1,0 +1,12 @@
+.controls {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.control input[type="number"] {
+    width: 50px;
+    margin-left: 5px;
+}
