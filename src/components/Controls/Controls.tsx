@@ -36,7 +36,7 @@ function Controls({boardSettings, setBoardSettings, superman, setSuperman}: Cont
                 <label htmlFor="mines">Mines:</label>
                 <input type="number" id="mines" value={localBoardSettings.mines} onChange={(e) => handleBoardSettingChange(e.target.value, "mines")} />
             </div>
-            <button onClick={() => setBoardSettings(localBoardSettings)}>New Game</button>
+            <button onClick={() => setBoardSettings(localBoardSettings)}>Update Board</button>
             <div className="control">
                 <input type="checkbox" id="superman" checked={superman} onChange={(e) => setSuperman(e.target.checked)} />
                 <label htmlFor="superman">Reveal Board</label>

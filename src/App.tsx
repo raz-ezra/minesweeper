@@ -12,9 +12,13 @@ function App() {
     <div className="App">
         <div className="instructions">
             <h1>Minesweeper</h1>
-            <p><i>
-                The full board might not fit the screen, scroll within the play area to access the full board
-            </i></p>
+            <p>
+                Shift + Click to place a flag<br/>
+                To start a new game, click the board's header
+            </p>
+            <p>
+                <i>The full board might not fit the screen, scroll within the play area to access the full board</i>
+            </p>
         </div>
         <Controls boardSettings={boardSettings} setBoardSettings={setBoardSettings} superman={superman} setSuperman={setSuperman} />
         <div className="game">
